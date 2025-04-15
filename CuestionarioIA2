@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Relaciona columnas – Inteligencia Artificial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    .relacionar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .columna {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    select {
+      width: 100%;
+      margin-top: 5px;
+      padding: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔹 Ejercicio: Relaciona columnas – Inteligencia Artificial</h1>
+
+  <div class="relacionar">
+
+    <div class="columna">
+      <p><strong>Columna A: Conceptos</strong></p>
+      <p>1. Aprendizaje automático</p>
+      <select id="r1">
+        <option value="">Selecciona una opción</option>
+        <option value="B">Uso de asistentes virtuales</option>
+        <option value="C">Capacidad de una IA para aprender a partir de datos</option>
+        <option value="A">Razonamiento lógico</option>
+        <option value="D">Medición manual</option>
+      </select>
+
+      <p>2. Inteligencia artificial</p>
+      <select id="r2">
+        <option value="">Selecciona una opción</option>
+        <option value="A">Razonamiento lógico</option>
+        <option value="C">Capacidad de una IA para aprender a partir de datos</option>
+        <option value="B">Uso de asistentes virtuales</option>
+        <option value="D">Medición manual</option>
+      </select>
+
+      <p>3. Aplicación cotidiana de IA</p>
+      <select id="r3">
+        <option value="">Selecciona una opción</option>
+        <option value="D">Medición manual</option>
+        <option value="C">Capacidad de una IA para aprender a partir de datos</option>
+        <option value="B">Uso de asistentes virtuales</option>
+        <option value="A">Razonamiento lógico</option>
+      </select>
+    </div>
+
+    <div class="columna">
+      <p><strong>Columna B: Descripciones</strong></p>
+      <p><strong>A)</strong> Razonamiento lógico</p>
+      <p><strong>B)</strong> Uso de asistentes virtuales</p>
+      <p><strong>C)</strong> Capacidad de una IA para aprender a partir de datos</p>
+      <p><strong>D)</strong> Medición manual</p>
+    </div>
+
+  </div>
+
+  <button onclick="verificar()">Enviar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      let correctas = 0;
+
+      if (document.getElementById("r1").value === "C") correctas++;
+      if (document.getElementById("r2").value === "A") correctas++;
+      if (document.getElementById("r3").value === "B") correctas++;
+
+      document.getElementById("resultado").textContent = `Respuestas correctas: ${correctas} de 3`;
+    }
+  </script>
+
+</body>
+</html>
